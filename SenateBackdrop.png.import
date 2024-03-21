@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://whs146s6cwof"
-path="res://.godot/imported/Library_Ruina.png-658d40013563c9fe5064166e54845912.ctex"
+uid="uid://caw2wc3qbp7fl"
+path="res://.godot/imported/SenateBackdrop.png-d0119727599fc3ec998a461f27cc30da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Library_Ruina.png"
-dest_files=["res://.godot/imported/Library_Ruina.png-658d40013563c9fe5064166e54845912.ctex"]
+source_file="res://SenateBackdrop.png"
+dest_files=["res://.godot/imported/SenateBackdrop.png-d0119727599fc3ec998a461f27cc30da.ctex"]
 
 [params]
 
