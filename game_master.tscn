@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbp3vod8ixg2m"]
+
+[ext_resource type="Texture2D" uid="uid://b37stomiqqes3" path="res://Murder.png" id="1_71yks"]
+[ext_resource type="Script" path="res://game_master.gd" id="1_xeoto"]
+[ext_resource type="PackedScene" uid="uid://88hkm7p2bea" path="res://textbox.tscn" id="3_mgjpt"]
+[ext_resource type="Texture2D" uid="uid://dcmpqtmuvvam1" path="res://30-0-70.png" id="3_rkjhb"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_uiik7"]
+
+[node name="Game-master" type="Node"]
+script = ExtResource("1_xeoto")
+
+[node name="Map" type="TextureRect" parent="."]
+offset_right = 543.0
+offset_bottom = 900.0
+texture = ExtResource("1_71yks")
+
+[node name="Senate" type="TextureRect" parent="."]
+offset_left = 543.0
+offset_right = 1440.0
+offset_bottom = 900.0
+texture = SubResource("ImageTexture_uiik7")
+expand_mode = 2
+
+[node name="Option_Left" type="Button" parent="Senate"]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 354.0
+offset_right = 332.0
+offset_bottom = 441.0
+text = "Vote Option
+A"
+
+[node name="Option_Mid" type="Button" parent="Senate"]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 354.0
+offset_right = 551.0
+offset_bottom = 441.0
+text = "Vote Option
+Middle Ground"
+
+[node name="Option_Right" type="Button" parent="Senate"]
+layout_mode = 0
+offset_left = 566.0
+offset_top = 354.0
+offset_right = 767.0
+offset_bottom = 441.0
+text = "Vote Option
+B"
+
+[node name="Senate_Preview" type="TextureRect" parent="Senate"]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 531.0
+offset_right = 771.0
+offset_bottom = 846.0
+texture = ExtResource("3_rkjhb")
+
+[node name="Textbox" parent="Senate" instance=ExtResource("3_mgjpt")]
