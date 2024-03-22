@@ -28,6 +28,7 @@ offset_left = 131.0
 offset_top = 354.0
 offset_right = 332.0
 offset_bottom = 441.0
+tooltip_text = "Vote for and sway some opinion towards option A."
 text = "Vote Option
 A"
 
@@ -37,8 +38,9 @@ offset_left = 350.0
 offset_top = 354.0
 offset_right = 551.0
 offset_bottom = 441.0
+tooltip_text = "Vote for and sway some opinion towards a compromise."
 text = "Vote Option
-Middle Ground"
+Compromise"
 
 [node name="Option_Right" type="Button" parent="Senate"]
 layout_mode = 0
@@ -46,6 +48,7 @@ offset_left = 566.0
 offset_top = 354.0
 offset_right = 767.0
 offset_bottom = 441.0
+tooltip_text = "Vote for and sway some opinion towards option B."
 text = "Vote Option
 B"
 
