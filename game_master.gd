@@ -7,7 +7,7 @@ var weights = [[25, 0, 25], [35, 0, 15], [15, 0, 35], [20,10,20], [15,20,15], [4
 ##Weights: index of wieghts array
 ## Gamestate# , Weight#, Textbox Prompt, r_text, m_text, l_text, PathA, PathB, PathC, map
 var scenes = [
-	[0, 0, "Speaker: Enemy Troops are upon our border with EoS. War is highly probable. Shall we strike first?", "Yes", "", "No", 1, -1, 2, [-1,-1,-1,-1,1,1,1,1]],
+	[0, 0, "Speaker: Enemy Troops are upon our border with Eos. War is highly probable. Shall we strike first?", "Yes", "", "No", 1, -1, 2, [-1,-1,-1,-1,1,1,1,1]],
 	[0, 1, "Speaker: We have determined to strike the enemy first. \nSpeaker: Shall we attack their Mountains or their Farmlands?", "The Mountains", "", "The Farmlands", 3, -1, 85, [-1,-1,-1,-1,1,1,1,1]],
 	[0, 0, "Speaker: To be safe let us deploy our capital's troops to the border.\nSpeaker: Where should we send them", "The Mountains", "", "The Farmlands", 51, -1, 52, [-1,-1,-1,-1,1,1,1,1]],
 	[0, 0, "Speaker: Our preemptive strike allowed us to take their less fortified mountain base. \nSpeaker: Shall we order the western troops to defend or to launch another attack?", "Defend", "", "Attack", 4, -1, 49, [-1,-1,1,-1,0,1,1,1]],
@@ -132,7 +132,7 @@ var scenes = [
 	#-2 - Plauge = armistance
 	[2, 0, "Survived. Peace was achieved out of fear of the plauge.\nThe war will undoubtibly resume in the future.", "", "", "", 0,0,0, [0,0,0,0,0,0,0,0]],
 	#-1 YOU SHOULD NOT HAVE GOTTEN HERE
-	[2, 0, "GBJ", "Leave", "Leave", "Leave", 0, 0, 0, [0,0,0,0,0,0,0,0]]
+	[0, 0, "Testing State", "Left", "", "Right", 0, -1, 0, [-2, -3, -4, -1, 0, 1, 3, 2]]
 	
 ]
 
