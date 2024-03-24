@@ -45,7 +45,7 @@ func update_image(image_rect, new_pic_id, base_text):
 			image_rect.show()
 		3:
 			image_rect.texture = load("res://Owned-plauge.png")
-			image_rect.tooltip_text = base_text + "(Friendly Occupied-Plauged)"
+			image_rect.tooltip_text = base_text + "(Friendly Occupied-Plauged-Cannot act in tandem)"
 			image_rect.show()
 
 func next_state(arr):

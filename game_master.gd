@@ -8,9 +8,9 @@ var weights = [[25, 0, 25], [35, 0, 15], [15, 0, 35], [20,10,20], [15,20,15], [4
 ## Gamestate# , Weight#, Textbox Prompt, r_text, m_text, l_text, PathA, PathB, PathC, map
 var scenes = [
 	[0, 0, "Speaker: Enemy Troops are upon our border with EoS. War is highly probable. Shall we strike first?", "Yes", "", "No", 1, -1, 2, [-1,-1,-1,-1,1,1,1,1]],
-	[0, 1, "Speaker: We have determined to strike the enemy first. \nSpeaker: Shall we attack their Mountains or their Farmlands?", "The Mountains", "", "The Farmlands", 3, -1, 85, [-1,-1,-1,-1,1,1,1,1]],#unfin
+	[0, 1, "Speaker: We have determined to strike the enemy first. \nSpeaker: Shall we attack their Mountains or their Farmlands?", "The Mountains", "", "The Farmlands", 3, -1, 85, [-1,-1,-1,-1,1,1,1,1]],
 	[0, 0, "Speaker: To be safe let us deploy our capital's troops to the border.\nSpeaker: Where should we send them", "The Mountains", "", "The Farmlands", 51, -1, 52, [-1,-1,-1,-1,1,1,1,1]],
-	[0, 0, "Speaker: Our preemptive strike allowed us to take their less fortified mountain base. \nSpeaker: Shall we order the western troops to foritfy or to launch another attack?", "Fortify", "", "Attack", 4, -1, 49, [-1,-1,1,-1,0,1,1,1]],
+	[0, 0, "Speaker: Our preemptive strike allowed us to take their less fortified mountain base. \nSpeaker: Shall we order the western troops to defend or to launch another attack?", "Defend", "", "Attack", 4, -1, 49, [-1,-1,1,-1,0,1,1,1]],
 	[0, 0, "Speaker: Since we have some leway let us send troops from the capital to the front lines. \nSpeaker: Shall we send them to our Mountains or Farmlands?", "Mountains", "", "Farmlands", 5, -1, 36, [-1, -1, 1, -1, 0, 1, 1, 1]], 
 	[0, 1, "Speaker: The Eastern flank is being attacked. \nSpeaker: Shall we send support to it? Or shall we have our western forces unite in Eos's mountains?", "Support the East", "", "Meet forces in the West", 17, -1, 6, [-1, -1, 1, -1, 1, 1, 1, 0]],
 	[0, 1, "Speaker: The troops have joined forces in the West. However, our East Flank has been routed. \nSpeaker: It is unlikely that the enemy troops will proceed to our encampment. Should we change focus to our terrirory or continue our offensive?", "Reclaim our Land", "", "Continue Offensive",7, -1, 14, [-1, -1, 2, 0, 0, -1, 1, 0]],
@@ -58,9 +58,9 @@ var scenes = [
 	[0, 6, "Speaker: Upon our forces surrounding Eos's encampment, and seeing our resered forces.\nSpeaker: Eos has decided to formally surrender. Do we accept?", "Accept", "", "Continue the War", -7, -1, -1, [-1, -1, 1, 0, 0, 1, 1, 0]], #force end
 	[0, 1, "Speaker: Our Western forces could not take Eos's encampment.\nSpeaker: Eos launched a surprise attack on our farmlands, and has captured them.\nSpeaker: Shall we reclaim the farmlands or hold the encampment?", "Reclaim Farmlands", "", "Hold encampment", 50, -1, 82, [-1, -1, 0, 0, 0, -1, 1, 1]  ],
 	[0, 0, "Speaker: We have reclaimed our farmlands.\nSpeaker: It is time to deploy our capital's forces.\nSpeaker: Where should they be deployed to?", "Mountains", "", "Farmlands", 68, -1, 70, [-1, -1, 0, 0, 0, 1, 0, 1]],
-	[0, 0, "Speaker: Eos has launched a surprise attack against our Farmlands.\nSpeaker: Shall we reclaim them or shall we attack their mountains?", "Reclaim Farmlands", "", "Attack Mountains", -1, -1, -1, [-1,-1,-1,0,2,-1,1,0]],#unfin - ALT THREAD
+	[0, 0, "Speaker: Eos has launched a surprise attack against our Farmlands.\nSpeaker: Shall we reclaim them or shall we attack their mountains?", "Reclaim Farmlands", "", "Attack Mountains", 87, -1, 95, [-1,-1,-1,0,2,-1,1,0]],#unfin? - ALT THREAD TEST FOR CONT
 	[0, 0, "Speaker: Eos launchehd a surprise attack against our Farmlands.\nSpeaker: Fortunatly our additional forces were able to repel the attack.\nSpeaker: Shall we attack or defend our lands?", "Attack", "", "Defend", 54, -1, 53, [-1, -1, -1, 0, 1, 2, 1, 0]], 
-	[0, 1, "Speaker: Eos claims that the attack on our borders was lead by insurgents.\nSpeaker: They are suing for peace and willing to ceed some territory.\nSpeaker:Do we accept or go offensive?", "Accept Peace", "", "Go Offensive", -3, -1, 54, [-1, -1, -1, 0, 1, 2, 1, 0]],
+	[0, 1, "Speaker: Eos claims that the attack on our borders was lead by insurgents.\nSpeaker: They are sueng for peace and willing to give money but not land.\nSpeaker:Do we accept or go offensive?", "Accept Peace", "", "Go Offensive", -11, -1, 54, [-1, -1, -1, 0, 1, 2, 1, 0]],
 	[0, 1, "Speaker: It seems in thee wak of their surprise attack Eos has moved forces to their farmlands.\nSpeaker: Shall we combine the encampment forces with the Western forces?\nSpeaker: Or shall we go offensive with the Eastern forces?", "Combine Western", "", "Attack with Eastern", 55, -1,57, [0, -1, -1, -1, 1, 2, 1, 0] ],
 	[0, 8, "Speaker: Now that our Western forces are combined what region should we attack?", "Mountains", "Both", "Farmlands", -1, 56, -1, [0, -1, -1, -1, 2, 2, 0, 0]], 
 	[0, 6, "Speaker: Our forces have decimated Eos's. We now surround their encampment.\nSpeaker: Eos has formally surrenderd. Do we accept?", "Accept", "", "Continue the War", -7, -1, -1, [0, -1, 2, 2, 0,0,0,0]], #force end
@@ -92,12 +92,27 @@ var scenes = [
 	[0, 6, "Speaker: Eos's forces attacked our encampment, but were defeated.\nSpeaker: Eos sues for peace.\nSpeaker: Shall we accept?", "Accept", "", "Continue War", -5, -1, -1, [-1, -1, 0, 0, 0, 0, 1, 1]], #force end
 	[0, 0, "Speaker: Our forces were able to reclaim our farmlands.\nSpeaker: Eos has sent more troops to their farmlands.\nSpeaker: Shall we focus on an assult in the West or on defense in the East?", "West Assult", "", "East Defense", 84, -1, -1, [0, 1, 1, 1, 2, 1, 0, 0]],
 	[0, 6, "Speaker: Eos attacked our mountains region, but our forces routed them.\nSpeaker: Eos has sued for peace. They will ceed some land.\nSpeaker: Do we accept?", "Accept", "", "Continue War", -3,-1,-1, [0, -1, 0, -1, 2, 1, 0, 0]], #if time expand
-	[0, 2, "Speaker: Our pre-emptive attack failed. It seems Eos was preparing the same.\n Eos was able to use this to claim our farmlands. However, they are greatly weakend\nSpeaker: Where should we send our Capital's troops?", "Mountains", "", "Farmlands", 86,-1,-1, [-1, -1, -1, 0, 1, -1]], #unfin
-	[0, 0, "Speaker: Our capital's troops have merged with our Western Forces.", "Reclaim Farmlands", "", "Attack Mountains", 87, -1, -1, [-1,-1,-1,0,2,-1,1,0]], #unfin -TIED TO ALT
-	
-	
+	[0, 2, "Speaker: Our pre-emptive attack failed. It seems Eos was preparing the same.\n Eos was able to use this to claim our farmlands. However, they are greatly weakend\nSpeaker: Where should we send our Capital's troops?", "Mountains", "", "Farmlands", 86,-1,101, [-1, -1, -1, 0, 1, -1, 1, 1]],
+	[0, 0, "Speaker: Our capital's forces have merged with our Western Forces.", "Reclaim Farmlands", "", "Attack Mountains", 87, -1, 95, [-1,-1,-1,0,2,-1,1,0]], #unfin? -TIED TO ALT
+	[0, 2, "Speaker: Our encampment's forces were more than enough to reclaim our farmlands.\nSpeaker: Eos has moved forces to their farmlands.\nSpeaker: Shall we attack with our forces or stay defensive?", "Attack", "", "Defend", 89, -1, 88, [0, -1, -1, -1, 2, 1, 0, 0]],
+	[0, 1, "Speaker: Eos has sued for peace. They claim insurgents launched the attack.\nSpeaker: They are not willing to ceed land, but will offer money.\nSpeaker: Shall we accept", "Accept", "", "Continue War", -11, -1, 89, [0, -1, -1, -1, 2, 1, 0, 0]],
+	[0, 0, "Speaker: Shall we attack with our Western Forces or our Eastern ones?", "Western", "", "Eastern", 90, -1, 93, [0, -1, -1, -1, 2, 1, 0, 0]], 
+	[0, 1, "Speaker: Our forces were able to take Eos's mountains with minimal damages.\nSpeaker: Shall we continue to their encampment or advance with our Eastern forces?", "Take encampment", "", "Take farmlands", 91, -1, 92, [0, -1, 2, -1, 0, 1, 0, 0]],
+	[0, 6, "Speaker: After taking their encampment, Eos has formally surrendered.\nSpeaker: Shall we accept?", "Accept", "", "Continue War", -7, -1, -1, [0, 1, 0, -1, 0, 1, 0, 0]], #force end
+	[0, 6, "Speaker: Our forces were able to take Eos's farmlands.\nSpeaker: Eos has formally surrendered. Shall we accept?", "Accept", "", "Continue War", -8, -1, -1, [0, -1, 2, 1, 0, 0, 0, 0] ],#force end
+	[0, 7, "Speaker: Our Eastern Forces were able to take Eos's farmlands.\nSpeaker: Shall they proceed or shall they wait for the Western Forces?", "Attack the encampment", "", "Wait for Western", -1, -1, 94, [0, -1, -1, 1, 2, 0, 0, 0, 0]], #force choice, not end
+	[0, 6, "Speaker: Our Western Forces were able to take Eos's mountains.\nSpeaker: Upon seeing their encampment surround Eos has formally surrendered.\nSpeaker: Shall we accept?", "Accept", "", "Continue War", -8, -1, -1, [0, -1, 2, 1, 0, 0, 0, 0]],#force end
+	[0, 0, "Speaker: Our Western Forces were able to take Eos's mountains.\nSpeaker: Eos has proposed peace. They will return our land, we will return theirs.\nSpeaker: Do we accept?", "Accept", "", "Continue War", -5, -1, 96, [0, -1, 2, 0, 0, -1, 1, 0]],
+	[0, 0, "Speaker: Eos used the peace talks to move forces to their encampment.\nSpeaker: Shall we attack the encampment or reclaim our lands?", "Attack encampment", "", "Reclaim", 97, -1, 100, [0, -2, 2, 0, 0, -1, 1, 0]],
+	[0, 5, "Speaker: Our Western forces were routed while attacking Eos's encampment.\nSpeaker: Shall we reclaim our lands or surrender them?", "Reclaim", "", "Surrender them", 98, -1, -4, [0, -1, 0, 0, 0, -1, 1, 0]],
+	[0, 6, "Speaker: Our Forces reclaimed our farmlands, but are exhaustsed.\nSpeaker: Eos has moved forces to their farmlands.\nSpeaker: Shall we sue for peace?", "Sue for Peace", "", "Continue War", -5, -1, 99, [0, 0, 0, -1, 0, 1, 0, 0]],
+	[0, 1, "Speaker: Our Forces were defeated.\nSpeaker: Shall we surrender?", "Surrender", "", "Continue War", -9, -1, -10, [0, 0, 0, 0, 0, -1, 0, 0]], #choice end
+	[0, 6, "Speaker: Our Forces reclaimed our farmlands.\nSpeaker: Eos has sued for peace. They will ceed land.\nSpeaker: Shall we accept?", "Accept", "", "Continue War", -3, -1, -1, [0, -2, 2, 0, 1, 0, 0]],#force end
+	[0, 6, "Speaker: Our Forces were able to reclaim our farmlands.\nSpeaker: Upon examining the enemy, they appear to be insurgents of Eos.\nSpeaker: Eos has declared that they did not endorse this attack.\nSpeaker: Shall we continue war?", "Continue War", "", "Make Peace", -1, -1, -5, [-1, -1, -1, 0, 1, 1, 1, 0]], #force end, expand if time?
 	
 	#-indexes for game endings
+	#-11 - Survived - Accepted payout from Eos
+	[2, 0, "Survived. The Senate and Eos restored peace.\nEos promises to put down future insurgents faster.\nEos will continue to prosper as it has.", "", "", "", 0,0,0, [0,0,0,0,0,0,0,0]],
 	#-10 - Lose - Capital raized
 	[3, 0, "Military Loss. The Senate of Lucii's capital was destoryed.\nSenior Senator, your choices have lead to the absolute destruction of Lucii.", "","","",0, 0, 0, [0,0,0,0,0,0,0,0]],
 	#-9 - Lose - Surrender
@@ -122,7 +137,7 @@ var scenes = [
 ]
 
 #debug
-var force_vote = true
+var force_vote = false
 
 var rng = RandomNumberGenerator.new()
 var current_state = 0
@@ -142,7 +157,7 @@ var favor = 3
 @onready var map = $Map
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	render_state(86)
+	render_state(0)
 	pass # Replace with function body.
 
 func render_state(state_num:int):
