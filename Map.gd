@@ -16,35 +16,35 @@ func _ready():
 func update_image(image_rect, new_pic_id, base_text):
 	match new_pic_id:
 		-4:
-			image_rect.texture = load("res://Plauged-region.png")
+			image_rect.texture = load("res://images/Plauged-region.png")
 			image_rect.tooltip_text = base_text + "(Plaugestriken-No military actions possible)"
 			image_rect.show()
 		-3:
-			image_rect.texture = load("res://Enemy-plauge.png")
+			image_rect.texture = load("res://images/Enemy-plauge.png")
 			image_rect.tooltip_text = base_text + "(Enemy Occupied-Plauged)"
 			image_rect.show()
 		-2:
-			image_rect.texture = load("res://Enemy-2.png")
+			image_rect.texture = load("res://images/Enemy-2.png")
 			image_rect.tooltip_text = base_text + "(Enemy Occupied Strongly)"
 			image_rect.show()
 		-1:
-			image_rect.texture = load("res://Enemy.png")
+			image_rect.texture = load("res://images/Enemy.png")
 			image_rect.tooltip_text = base_text + "(Enemy Occupied)"
 			image_rect.show()
 		0:
-			image_rect.texture = load("res://Jester-of-Nil.png")
+			image_rect.texture = load("res://images/Jester-of-Nil.png")
 			image_rect.tooltip_text = base_text + "(Unoccupied)"
 			image_rect.show()
 		1:
-			image_rect.texture = load("res://Owned.png")
+			image_rect.texture = load("res://images/Owned.png")
 			image_rect.tooltip_text = base_text + "(Friendly Occupied)"
 			image_rect.show()
 		2:
-			image_rect.texture = load("res://Owned-2.png")
+			image_rect.texture = load("res://images/Owned-2.png")
 			image_rect.tooltip_text = base_text + "(Friendly Occupied Strongly)"
 			image_rect.show()
 		3:
-			image_rect.texture = load("res://Owned-plauge.png")
+			image_rect.texture = load("res://images/Owned-plauge.png")
 			image_rect.tooltip_text = base_text + "(Friendly Occupied-Plauged-Cannot act in tandem)"
 			image_rect.show()
 

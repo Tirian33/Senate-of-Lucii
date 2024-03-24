@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1oq1mar8kmt2"]
+[gd_scene load_steps=7 format=3 uid="uid://c1oq1mar8kmt2"]
 
 [ext_resource type="Script" path="res://game_master.gd" id="1_ougtt"]
-[ext_resource type="Texture2D" uid="uid://caw2wc3qbp7fl" path="res://SenateBackdrop.png" id="2_64vk3"]
-[ext_resource type="Texture2D" uid="uid://dcmpqtmuvvam1" path="res://30-0-70.png" id="3_ov12o"]
+[ext_resource type="Texture2D" uid="uid://caw2wc3qbp7fl" path="res://images/SenateBackdrop.png" id="2_64vk3"]
+[ext_resource type="Texture2D" uid="uid://dcmpqtmuvvam1" path="res://images/30-0-70.png" id="3_ov12o"]
 [ext_resource type="PackedScene" uid="uid://88hkm7p2bea" path="res://textbox.tscn" id="4_q5uc7"]
 [ext_resource type="PackedScene" uid="uid://b21ol6ph2ybc" path="res://map.tscn" id="5_qsvtv"]
+[ext_resource type="AudioStream" uid="uid://clegyp741y08v" path="res://audio/Gavel.mp3" id="6_bs4ij"]
 
 [node name="game" type="Node"]
 script = ExtResource("1_ougtt")
@@ -54,6 +55,10 @@ texture = ExtResource("3_ov12o")
 [node name="Textbox" parent="Senate" instance=ExtResource("4_q5uc7")]
 
 [node name="Map" parent="." instance=ExtResource("5_qsvtv")]
+
+[node name="Vote_end" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_bs4ij")
+pitch_scale = 1.4
 
 [connection signal="pressed" from="Senate/Option_Left" to="." method="_on_option_selected" binds= [0]]
 [connection signal="pressed" from="Senate/Option_Mid" to="." method="_on_option_selected" binds= [1]]

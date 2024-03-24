@@ -155,6 +155,7 @@ var favor = 3
 @onready var mid_button = $Senate/Option_Mid
 @onready var left_button = $Senate/Option_Left
 @onready var map = $Map
+@onready var gavel = $Vote_end
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -178,31 +179,31 @@ func render_state(state_num:int):
 		odds = weights[scenes[current_state][1]].duplicate()
 		match scenes[current_state][1]:
 			1:
-				senate_preview.texture = load("res://70-0-30.png")
+				senate_preview.texture = load("res://images/70-0-30.png")
 				senate_preview.tooltip_text = "The Senate favors the left option."
 			2:
-				senate_preview.texture = load("res://30-0-70.png")
+				senate_preview.texture = load("res://images/30-0-70.png")
 				senate_preview.tooltip_text = "The Senate favors the right option."
 			3:
-				senate_preview.texture = load("res://40-20-40.png")
+				senate_preview.texture = load("res://images/40-20-40.png")
 				senate_preview.tooltip_text = "The Senate is not favorable to a compromise."
 			4:
-				senate_preview.texture = load("res://30-40-30.png")
+				senate_preview.texture = load("res://images/30-40-30.png")
 				senate_preview.tooltip_text = "The Senate is favorable to a compromise."
 			5:
-				senate_preview.texture = load("res://80-0-20.png")
+				senate_preview.texture = load("res://images/80-0-20.png")
 				senate_preview.tooltip_text = "The Senate STRONGLY favors the left option."
 			6:
-				senate_preview.texture = load("res://100-0-0.png")
+				senate_preview.texture = load("res://images/100-0-0.png")
 				senate_preview.tooltip_text = "The Senate is unanimous for the left option."
 			7:
-				senate_preview.texture = load("res://0-0-100.png")
+				senate_preview.texture = load("res://images/0-0-100.png")
 				senate_preview.tooltip_text = "The Senate is unanimous for the right option."
 			8: 
-				senate_preview.texture = load("res://1-48-1.png")
+				senate_preview.texture = load("res://images/1-48-1.png")
 				senate_preview.tooltip_text = "The Senate STRONGLY favors a compromise option."
 			_:
-				senate_preview.texture = load("res://50-0-50.png")
+				senate_preview.texture = load("res://images/50-0-50.png")
 				senate_preview.tooltip_text = "The Senate is equally split."
 		
 		
@@ -229,7 +230,7 @@ func end_game(win_state:int):
 	right_to = -9999
 	right_button.text = "Quit Game"
 	right_button.tooltip_text = "Quit Game"
-	senate_preview.texture = load("res://Player-choice.png")
+	senate_preview.texture = load("res://images/Player-choice.png")
 	senate_preview.tooltip_text = "This is your choice. The Senate will not weigh in."
 	
 	
@@ -271,6 +272,7 @@ func _on_option_selected(pos:int):
 			else:
 				get_tree().quit()
 		else:
+			gavel.play(0.0)
 			var vote0 = 0
 			var vote1 = 0
 			var vote2 = 0
