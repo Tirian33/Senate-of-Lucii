@@ -10,10 +10,12 @@ config_version=5
 
 [application]
 
-config/name="Jam"
+config/name="Senate_of_Lucii"
+config/description="Small game for Game Design Gamjam week. Topic: Vote"
 run/main_scene="res://game_master.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://icon.png"
+config/windows_native_icon="res://icon.ico"
 
 [display]
 

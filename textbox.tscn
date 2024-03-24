@@ -17,6 +17,7 @@ bg_color = Color(0.627451, 0.321569, 0.176471, 1)
 script = ExtResource("1_jdgq0")
 
 [node name="TextboxContainer" type="MarginContainer" parent="."]
+visible = false
 offset_left = 592.0
 offset_right = 1388.0
 offset_bottom = 140.0

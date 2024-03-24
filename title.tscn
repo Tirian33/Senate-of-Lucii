@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsgg1vx1hg66i"]
+
+[ext_resource type="Texture2D" uid="uid://e0lqxkvloumn" path="res://Title-base.png" id="1_1batf"]
+[ext_resource type="Script" path="res://title.gd" id="1_ju1p1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nyt2w"]
+bg_color = Color(0.752941, 0.25098, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(100, 100, 100, 1)
+
+[node name="Title" type="CanvasLayer"]
+script = ExtResource("1_ju1p1")
+
+[node name="Title-Image" type="TextureRect" parent="."]
+offset_right = 1440.0
+offset_bottom = 900.0
+texture = ExtResource("1_1batf")
+metadata/_edit_use_anchors_ = true
+
+[node name="TitleBox" type="MarginContainer" parent="."]
+offset_left = 320.0
+offset_top = 148.0
+offset_right = 1120.0
+offset_bottom = 288.0
+theme_override_constants/margin_left = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="TitlePanel" type="Panel" parent="TitleBox"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nyt2w")
+
+[node name="Title Margin" type="MarginContainer" parent="TitleBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="TitleBox/Title Margin"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TitleBox/Title Margin/Panel"]
+layout_mode = 2
+offset_top = 30.0
+offset_right = 780.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 42
+text = "SENATE OF LUCII"
+horizontal_alignment = 1
+
+[node name="PlayButton" type="Button" parent="."]
+offset_left = 570.0
+offset_top = 300.0
+offset_right = 870.0
+offset_bottom = 400.0
+theme_override_font_sizes/font_size = 40
+text = "Play Game"
+metadata/_edit_use_anchors_ = true
+
+[node name="QuitButton" type="Button" parent="."]
+offset_left = 570.0
+offset_top = 420.0
+offset_right = 870.0
+offset_bottom = 520.0
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

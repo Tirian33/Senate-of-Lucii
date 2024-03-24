@@ -157,11 +157,9 @@ var favor = 3
 @onready var map = $Map
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	render_state(0)
 	pass # Replace with function body.
 
 func render_state(state_num:int):
-	print(state_num)
 	if state_num == -9999:
 		get_tree().quit()
 	elif scenes[state_num][0] != 0:

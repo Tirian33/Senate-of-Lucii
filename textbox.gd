@@ -7,7 +7,7 @@ extends CanvasLayer
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	prior_box.hide()
-	pass # Replace with function body.
+	textbox_container.hide()
 	
 func restart():
 	prior_box.hide()
